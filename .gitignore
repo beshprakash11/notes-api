@@ -1,0 +1,21 @@
+# ignore modules files
+node_modules/
+
+# ignore logs files
+logs
+*.log
+
+# ignore build dir
+/dist
+build/
+
+# ignore env files
+.env
+
+# ignore id specific files
+.idea/
+.vscode/
+*.sw*
+
+# ignore lock file
+package-lock.json

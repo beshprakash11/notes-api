@@ -1,0 +1,24 @@
+{
+  "name": "notes-api",
+  "version": "1.0.0",
+  "description": "Notes api server develop using expressjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beshprakash11/notes-api.git"
+  },
+  "author": "Besh P.Yogi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beshprakash11/notes-api/issues"
+  },
+  "homepage": "https://github.com/beshprakash11/notes-api#readme",
+  "dependencies": {
+    "expressjs": "^1.0.1",
+    "mongose": "^0.0.2-security",
+    "nodemon": "^2.0.20"
+  }
+}
