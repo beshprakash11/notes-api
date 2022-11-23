@@ -6,3 +6,6 @@ Notes api server develop using express for NoteAPP
 1. fs
 3. mongose
 4. nodemon
+
+# Running the files
+npm run dev
