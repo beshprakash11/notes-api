@@ -1,6 +1,8 @@
 const express = require('express');
 const fs = require('fs')
 
+require('./db/mongoose')
+
 //initialize the express
 const app = express();
 
