@@ -9,3 +9,5 @@ Notes api server develop using express for NoteAPP
 
 # Running the files
 npm run dev
+
+## Require nodejs version setup

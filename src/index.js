@@ -12,7 +12,7 @@ app.use(express.json())
 
 // Defining the custom port i.e. 3000 ... 9999
 const port = process.env.Port || 3000;
-app.listen(port, () => {
+app.listen(port, () => { //,'85.214.238.109' () => {
     console.log("Server is up on port " + port);
 })
 
