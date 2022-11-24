@@ -38,3 +38,32 @@ app.get('/notes', async(req, res) =>{
     }
     
 })
+
+// Update data to the mongoDB
+app.patch("/notes/:id", async(req, res) =>{
+    try {
+        const note = await Note.findById(req.params.id)
+        if(!note){
+            return res.status(404).send()
+        }
+
+        note.note = req.body.note
+        await note.save()
+        res.status(200).send(note)
+    } catch (err) {
+        res.status(404).send(err)
+    }
+})
+
+// Delete data from mangoDb
+app.delete("/notes/:id", async(req, res) =>{
+    try {
+        const note = await Note.findByIdAndDelete(req.params.id)
+        if(!note){
+            return res.status(404).send()
+        }
+        res.send("The note has been deleted")
+    } catch (err) {
+        res.status(500).send(err)       
+    }
+})
