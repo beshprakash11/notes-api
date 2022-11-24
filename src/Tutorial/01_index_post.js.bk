@@ -17,23 +17,19 @@ app.listen(port, () => {
 })
 
 //notes api
-app.get('/notes', async(req, res) =>{
-    try {
-        const notes = await Note.find({})
-        res.send(notes)
-    } catch (err) {
-        res.status(500).send(err)
-    }
-    
+app.get('/notes', (req, res) =>{
+    const notes = Note.find({})
 })
 
 // Posting data to notes mango database
-app.post('/notes', async(req,res) =>{
+app.post('/notes',(req,res) =>{
     const note = new Note(req.body);
-    try{
-        await note.save()
-        res.status(201).send(note)
-    }catch (err){
-        res.status(400).send(err)
-    }
+
+    note.save()
+    .then(() =>{
+        res.status(200).send(note);
+    })
+    .catch((err) => {
+        res.status(500).send(err);
+    })
 })
