@@ -16,18 +16,8 @@ app.listen(port, () => {
     console.log("Server is up on port " + port);
 })
 
-//notes api
-app.get('/notes', async(req, res) =>{
-    try {
-        const notes = await Note.find({})
-        res.send(notes)
-    } catch (err) {
-        res.status(500).send(err)
-    }
-    
-})
-
-// Posting data to notes mango database
+// CRUD APP Stands for Create, Read, Update, Delete
+// Crate data to notes mongoDB
 app.post('/notes', async(req,res) =>{
     const note = new Note(req.body);
     try{
@@ -36,4 +26,15 @@ app.post('/notes', async(req,res) =>{
     }catch (err){
         res.status(400).send(err)
     }
+})
+
+//Read data from the mongoDB
+app.get('/notes', async(req, res) =>{
+    try {
+        const notes = await Note.find({})
+        res.send(notes)
+    } catch (err) {
+        res.status(500).send(err)
+    }
+    
 })
